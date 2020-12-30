@@ -13,7 +13,7 @@ class RunCar implements MovableInterface{
         if(!isset($_SESSION['speed'])){
             return "Сначала зажигайте автомобиль";
         }
-            if($_SESSION['speed']<100){
+            if($_SESSION['speed']<self::MAX_SPEED){
                 $_SESSION['speed'] +=10;
                 return "Ускорение, ваша скорость ".$_SESSION['speed']."км/ч";
             }
@@ -63,7 +63,7 @@ if(!empty($_POST)){
 
     </head>
     <body>
-    <p>Ruling Car</p>
+    <p>Car Control</p>
     <form action="" method="post" >
         <button name="control" value="start">Start</button>
         <button name="control" value="up">Up</button>
